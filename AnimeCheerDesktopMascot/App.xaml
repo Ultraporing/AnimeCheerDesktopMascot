@@ -1,0 +1,19 @@
+﻿<Application x:Class="AnimeCheerDesktopMascot.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AnimeCheerDesktopMascot"
+             xmlns:properties="clr-namespace:AnimeCheerDesktopMascot.Properties"
+             StartupUri="AnimeCheerDesktopMascotWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ContextMenu x:Key="TrayMenu">
+                <MenuItem Header="Stay topmost Window" Command="local:Commands.Topmost" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=Topmost, Mode=TwoWay}" />
+                <MenuItem Header="Transparent on mouseover" Command="local:Commands.MouseoverTransparency" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=MouseoverTransparency, Mode=TwoWay}" />
+                <MenuItem Header="Window Fixed" Command="local:Commands.LockWindow" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=LockWindow, Mode=TwoWay}" />
+                <MenuItem Header="Half size" Command="local:Commands.HalfSize" IsCheckable="True" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=HalfSize, Mode=TwoWay}" />
+                <Separator />
+                <MenuItem Header="Quit" Command="local:Commands.Exit" />
+            </ContextMenu>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
